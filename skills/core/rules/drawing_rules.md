@@ -1,4 +1,6 @@
-# Drawing Rules V1.0
+# Drawing Rules V1.1
+
+建筑图继续读取 [architecture.md](architecture.md)，结构图继续读取 [structure.md](structure.md)。所有识读结果先写入 `docs/drawing-model.md` 定义的数据模型，再运行校验器；未通过的构件不得进入工程量计算。
 
 ## 输入控制
 
@@ -23,3 +25,6 @@
 - DR-201：通过构件编号、轴线和标高关联建筑、结构、机电和装修信息；名称相同但定位不一致的构件不得合并。
 - DR-202：检查缺页、缺说明、缺详图、缺门窗表、缺结构总说明与缺钢筋说明。
 - DR-203：对每条提取标记 `confirmed`、`inferred` 或 `pending`。`inferred` 必须说明推断路径；`pending` 必须说明缺失事实。
+- DR-204：`confirmed` 项必须具有 High 或 Medium 置信度和可定位来源；Low 置信度不得升级为 `confirmed`。
+- DR-205：轴网分段尺寸之和与总尺寸的允许差为 1 mm；超过时生成阻断性问题。
+- DR-206：构件使用“构件编号 + 楼层”作为去重键；同层重复键必须人工判断是重复提取还是不同实例。

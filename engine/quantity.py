@@ -20,6 +20,8 @@ def _decimal(value: Any, label: str) -> Decimal:
         result = Decimal(str(value))
     except (InvalidOperation, ValueError) as exc:
         raise QuantityError(f"{label} 必须为数字") from exc
+    if not result.is_finite():
+        raise QuantityError(f"{label} 必须为有限数值")
     if result < 0:
         raise QuantityError(f"{label} 不得为负数")
     return result

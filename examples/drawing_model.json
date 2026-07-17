@@ -1,0 +1,32 @@
+{
+  "project": "演示工程",
+  "drawings": [
+    {"drawing_no": "A-101", "title": "一层建筑平面图", "discipline": "architecture", "revision": "R01", "scale": "1:100", "unit": "mm", "status": "active"},
+    {"drawing_no": "S-101", "title": "一层结构平面图", "discipline": "structure", "revision": "R01", "scale": "1:100", "unit": "mm", "status": "active"}
+  ],
+  "axis_chains": [
+    {
+      "id": "X-1-3", "direction": "x", "total": {"value": 7200, "unit": "mm"},
+      "segments": [
+        {"from": "1", "to": "2", "distance": {"value": 3600, "unit": "mm"}, "source_ref": "A-101/轴1-2"},
+        {"from": "2", "to": "3", "distance": {"value": 3600, "unit": "mm"}, "source_ref": "A-101/轴2-3"}
+      ]
+    }
+  ],
+  "elevations": [
+    {"id": "室外地坪", "value": {"value": -0.45, "unit": "m"}, "source_refs": ["A-101/标高符号"], "status": "confirmed", "confidence": "high"}
+  ],
+  "components": [
+    {
+      "id": "W-01", "category": "wall", "level": "1F", "source_refs": ["A-101/轴1-3/A"], "status": "confirmed", "confidence": "high",
+      "measurements": {"length": {"value": 7.2, "unit": "m"}, "height": {"value": 3.3, "unit": "m"}, "thickness": {"value": 200, "unit": "mm"}}
+    },
+    {
+      "id": "KZ1", "category": "column", "level": "1F", "source_refs": ["S-101/轴1/A"], "status": "confirmed", "confidence": "high",
+      "measurements": {"section_width": {"value": 500, "unit": "mm"}, "section_depth": {"value": 500, "unit": "mm"}, "storey_height": {"value": 3.3, "unit": "m"}, "count": {"value": 4, "unit": "each"}}
+    }
+  ],
+  "ocr_checks": [
+    {"id": "OCR-S101-KZ1", "first_read": "KZ1 500x500", "second_read": "KZ1 500x500", "source_ref": "S-101/柱表 KZ1"}
+  ]
+}

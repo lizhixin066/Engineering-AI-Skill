@@ -34,6 +34,12 @@ class QuantityCalculationTests(unittest.TestCase):
                 "inputs": {"length": length(1), "width": length(1)},
                 "options": {"deductions": [{"length": length(2), "width": length(1)}]} } ]})
 
+    def test_rejects_non_finite_values(self):
+        with self.assertRaises(QuantityError):
+            calculate_document({"items": [{
+                "id": "area-nan", "type": "area", "source_refs": ["A-101"], "status": "confirmed",
+                "inputs": {"length": length("NaN"), "width": length(1)} } ]})
+
 
 if __name__ == "__main__":
     unittest.main()
