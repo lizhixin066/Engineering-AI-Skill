@@ -11,6 +11,7 @@
 ![Tests](https://img.shields.io/badge/tests-unittest-brightgreen)
 ![Output](https://img.shields.io/badge/output-JSON%20%7C%20CSV-f59e0b)
 ![Stage](https://img.shields.io/badge/stage-M1--M5-6366f1)
+![License](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-e8790a)
 
 [快速开始](#-快速开始) · [核心能力](#-核心能力) · [数据模型](#-数据模型) · [项目结构](#-项目结构) · [文档](#-文档导航)
 
@@ -231,6 +232,12 @@ Engineering-AI-Skill/
 - **M2**：核心识图、工程量和审图规则
 - **M3 / M4**：建筑与结构专项规则、图纸模型及确定性校验器
 - **M5（首批）**：面积、混凝土、砌体、装修、模板、钢筋、管线和计数项计算
+
+## 📄 使用许可
+
+本项目以源码可用方式公开，采用 [PolyForm Noncommercial License 1.0.0](LICENSE)：允许在协议范围内查看、研究、修改和分发，但仅限非商业用途。任何商业使用、商业集成、收费服务或预期用于商业应用的行为，均需事先取得版权所有者的单独书面授权。
+
+> 非商业限制意味着本项目不是 OSI 定义下的开源软件。仓库公开不等于授权商用；英文 `LICENSE` 原文为准。
 
 ## ⚠️ 使用边界
 
