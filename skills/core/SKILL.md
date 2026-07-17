@@ -10,10 +10,11 @@ description: 对建筑、结构、机电工程图纸、PDF、CAD 导出图或 IF
 ## 执行顺序
 
 1. 读取 `rules/drawing_rules.md`，建立图纸台账并完成专业、版本、比例、单位、轴网和标高检查。
-2. 把图纸观察写成带定位来源的结构化构件；读取 `rules/quantity_rules.md` 选择计量口径和计算规则。
-3. 对已确认数据运行 `scripts/calculate_takeoff.py`。不要手算后覆盖脚本结果；若需扩展公式，在 `engine/quantity.py` 增加测试后实现。
-4. 读取 `rules/review_rules.md` 进行冲突、缺失、单位、重复与数量级检查。
-5. 交付图纸台账、分项计算书、汇总表、待确认项和复核报告。每行包含来源、公式、输入单位和状态。
+2. 建筑图读取 `rules/architecture.md`，结构图读取 `rules/structure.md`，把观察写入 `docs/drawing-model.md` 定义的图纸模型。
+3. 在仓库根目录运行 `python scripts/validate_drawing_model.py drawing-model.json --output drawing-report.json --strict`。校验未通过时停止相关工程量计算。
+4. 读取 `rules/quantity_rules.md`，将通过校验的构件转换为算量输入，再运行 `scripts/calculate_takeoff.py`。
+5. 读取 `rules/review_rules.md` 进行冲突、缺失、单位、重复与数量级检查。
+6. 交付图纸台账、模型校验报告、分项计算书、汇总表、待确认项和复核报告。
 
 ## 强制停止条件
 
@@ -24,6 +25,9 @@ description: 对建筑、结构、机电工程图纸、PDF、CAD 导出图或 IF
 ## 资源
 
 - [识图规则](rules/drawing_rules.md)
+- [建筑识图规则](rules/architecture.md)
+- [结构识图规则](rules/structure.md)
 - [工程量规则](rules/quantity_rules.md)
 - [审图规则](rules/review_rules.md)
+- [图纸模型](../../docs/drawing-model.md)
 - [计算器输入与命令](../../docs/workflow.md)

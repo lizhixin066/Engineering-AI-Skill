@@ -1,4 +1,4 @@
 interface:
   display_name: "工程识图与算量"
-  short_description: "从工程图纸提取可复核工程量"
-  default_prompt: "使用 $engineering-ai-skill 识读图纸并编制可追溯工程量计算书。"
+  short_description: "从建筑结构机电图纸提取证据并输出可复核工程量计算书"
+  default_prompt: "使用 $engineering-ai-skill 校验图纸识读模型并编制可追溯工程量计算书。"

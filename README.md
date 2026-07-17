@@ -8,11 +8,13 @@
 
 - M1：项目骨架、证据追踪模型和交付标准。
 - M2：核心识图、工程量与审图规则。
+- M3/M4：建筑与结构识图专项规则、图纸台账/轴网/标高/构件/OCR 数据模型及确定性校验器。
 - M5（首批）：土建设计净量计算引擎，覆盖面积、混凝土、砌体、装修、模板、钢筋、管线和计数项。
 
 ## 快速开始
 
 ```powershell
+python scripts/validate_drawing_model.py examples/drawing_model.json --output outputs/drawing-report.json --strict
 python scripts/calculate_takeoff.py examples/basic_takeoff.json --output outputs/basic-result.json --csv outputs/basic-summary.csv
 python -m unittest discover -s tests -v
 ```
