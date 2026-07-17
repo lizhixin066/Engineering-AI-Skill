@@ -1,0 +1,35 @@
+{
+  "project": "演示工程",
+  "items": [
+    {
+      "id": "S-SLAB-001",
+      "type": "slab",
+      "description": "一层现浇板",
+      "source_refs": ["S-101/轴1-4/A-C", "结构总说明第3条"],
+      "status": "confirmed",
+      "inputs": {
+        "length": {"value": 7200, "unit": "mm"},
+        "width": {"value": 4800, "unit": "mm"},
+        "thickness": {"value": 120, "unit": "mm"}
+      },
+      "options": {"deductions": [{"length": {"value": 800, "unit": "mm"}, "width": {"value": 800, "unit": "mm"}, "thickness": {"value": 120, "unit": "mm"}}]}
+    },
+    {
+      "id": "S-RB-001",
+      "type": "rebar",
+      "description": "HRB400 Φ12 直筋",
+      "source_refs": ["S-101/板配筋说明"],
+      "status": "confirmed",
+      "inputs": {"count": {"value": 20, "unit": "each"}, "length": {"value": 6, "unit": "m"}, "diameter": {"value": 12, "unit": "mm"}}
+    },
+    {
+      "id": "A-WALL-001",
+      "type": "wall_finish",
+      "description": "走道墙面抹灰（双面）",
+      "source_refs": ["A-102/走道", "装修做法表"],
+      "status": "inferred",
+      "inputs": {"length": {"value": 10, "unit": "m"}, "height": {"value": 3, "unit": "m"}},
+      "options": {"sides": 2, "deductions": [{"width": {"value": 1, "unit": "m"}, "height": {"value": 2.1, "unit": "m"}}]}
+    }
+  ]
+}
